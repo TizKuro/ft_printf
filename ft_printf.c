@@ -6,7 +6,7 @@
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/01 02:01:42 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/03 04:08:20 by trmorand         ###   ########.fr       */
+/*   Updated: 2026/11/03 04:35:33 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ static	int	litters(const char *format, int i, va_list *parameters)
 		return(ft_putstr_fd(va_arg(*parameters, char *), 1));
 	else if (format[i + 1] == 'd' || format[i + 1] == 'i')
 		return(ft_putnbr_fd(va_arg(*parameters, int), 1));
-	//else if (format[i + 1] == 'p')
+	else if (format[i + 1] == 'p')
+		return(ft_pmemory(va_arg(*parameters, void *)));
 	else if (format[i + 1] == 'u')
 		return(ft_putnbr_unsigned_fd(va_arg(*parameters, unsigned int), 1));
 	else if (format[i + 1] == 'X')
