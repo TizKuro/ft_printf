@@ -6,7 +6,7 @@
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/20 10:21:47 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/03 03:13:34 by trmorand         ###   ########.fr       */
+/*   Updated: 2026/11/03 03:44:48 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+int	ft_putnbr_unsigned_fd(unsigned int n, int fd);
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);
 int				ft_isalnum(int c);
