@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_hexadecimal_fd.c                         :+:      :+:    :+:   */
+/*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/03 03:54:26 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/03 04:48:47 by trmorand         ###   ########.fr       */
+/*   Created: 2026/11/03 04:48:55 by trmorand          #+#    #+#             */
+/*   Updated: 2026/11/03 23:58:45 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_hexadecimal_fd(unsigned long int n, int fd, char *base)
+int	ft_putnbr_unsigned(unsigned int n)
 {
 	int	len;
 
 	len = 0;
-	if (n < 16)
+
+	if (n >= 0 && n <= 9)
 	{
-		ft_putchar_fd(base[n], fd);
+		ft_putchar(n + '0');
 		len++;
 	}
-	else
+	if (n > 9)
 	{
-		len += ft_putnbr_hexadecimal_fd (n / 16, fd, base);
-		len += ft_putnbr_hexadecimal_fd (n % 16, fd, base);
+		len += ft_putnbr_unsigned (n / 10);
+		len += ft_putnbr_unsigned (n % 10);
 	}
 	return (len);
 }

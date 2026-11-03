@@ -26,11 +26,11 @@ The entire project is written in C and follows the 42 norm.
 | Function | Description |
 |:---|:---|
 | `ft_printf` | Main function. Reads the format string, prints normal characters as they are, calls the matching function for each conversion, and returns the total number of characters written. |
-| `ft_putchar_fd` | Writes one character and returns 1. Used for `%c`, `%%` and plain characters. |
-| `ft_putstr_fd` | Writes a string and returns its length. Prints `(null)` if the pointer is `NULL`. Used for `%s`. |
-| `ft_putnbr_fd` | Writes a signed decimal number, with its `-` sign if negative, and returns the number of characters written. Used for `%d` and `%i`. |
-| `ft_putnbr_unsigned_fd` | Same as above for an `unsigned int`, without sign. Used for `%u`. |
-| `ft_putnbr_hexadecimal_fd` | Writes a number in base 16, using the lowercase or uppercase digit table it receives, and returns the number of digits written. Used for `%x`, `%X` and `%p`. |
+| `ft_putchar` | Writes one character and returns 1. Used for `%c`, `%%` and plain characters. |
+| `ft_putstr` | Writes a string and returns its length. Prints `(null)` if the pointer is `NULL`. Used for `%s`. |
+| `ft_putnbr` | Writes a signed decimal number, with its `-` sign if negative, and returns the number of characters written. Used for `%d` and `%i`. |
+| `ft_putnbr_unsigned` | Same as above for an `unsigned int`, without sign. Used for `%u`. |
+| `ft_putnbr_hexa` | Writes a number in base 16, using the lowercase or uppercase digit table it receives, and returns the number of digits written. Used for `%x`, `%X` and `%p`. |
 | `ft_pmemory` | Writes a pointer as `0x` followed by its address in hexadecimal, or `(nil)` if it is `NULL`. Used for `%p`. |
 
 ## Algorithm and data structures

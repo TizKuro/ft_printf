@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/22 14:05:11 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/03 04:58:03 by trmorand         ###   ########.fr       */
+/*   Created: 2026/10/22 14:07:19 by trmorand          #+#    #+#             */
+/*   Updated: 2026/11/03 23:54:09 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_putnbr_fd(int n, int fd)
+int	ft_putstr(char *s)
 {
-	long int	nb;
-	int	len;
+	int	i;
 
-	len = 0;
-	nb = n;
-
-	if (nb < 0)
+	i = 0;
+	if (!s)
 	{
-		ft_putchar_fd('-', fd);
-		nb *= -1;
-		len++;
+		write(1,"(null)", 6);
+		return (6);
 	}
-	if (nb >= 0 && nb <= 9)
+	while (s[i])
 	{
-		ft_putchar_fd(nb + '0', fd);
-		len++;
+		write(1, &s[i], 1);
+		i++;
 	}
-	if (nb > 9)
-	{
-		len += ft_putnbr_fd (nb / 10, fd);
-		len += ft_putnbr_fd (nb % 10, fd);
-	}
-	return (len);
+	return (i);
 }

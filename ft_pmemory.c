@@ -6,7 +6,7 @@
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 04:24:31 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/03 23:45:24 by trmorand         ###   ########.fr       */
+/*   Updated: 2026/11/03 23:58:26 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ int	ft_pmemory(void *ptr)
 		return (5);
 	}
 	write(1, "0x", 2);
-	return (ft_putnbr_hexadecimal_fd((unsigned long int)ptr, 1, base) + 2);
+	return (ft_putnbr_hexa((unsigned long int)ptr, base) + 2);
 }

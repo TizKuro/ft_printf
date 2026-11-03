@@ -6,29 +6,34 @@
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/01 02:01:42 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/03 04:51:51 by trmorand         ###   ########.fr       */
+/*   Updated: 2026/11/03 23:57:40 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 static	int	litters(const char *format, int i, va_list *parameters)
 {
+	char	*baseM;
+	char	*baseMi;
+
+	baseM = "0123456789ABCDEF";
+	baseMi = "0123456789abcdef";
 	if (format[i + 1] == 'c')
-		return(ft_putchar_fd(va_arg(*parameters, int), 1));
+		return(ft_putchar(va_arg(*parameters, int)));
 	else if (format[i + 1] == 's')
-		return(ft_putstr_fd(va_arg(*parameters, char *), 1));
+		return(ft_putstr(va_arg(*parameters, char *)));
 	else if (format[i + 1] == 'd' || format[i + 1] == 'i')
-		return(ft_putnbr_fd(va_arg(*parameters, int), 1));
+		return(ft_putnbr(va_arg(*parameters, int)));
 	else if (format[i + 1] == 'p')
 		return(ft_pmemory(va_arg(*parameters, void *)));
 	else if (format[i + 1] == 'u')
-		return(ft_putnbr_unsigned_fd(va_arg(*parameters, unsigned int), 1));
+		return(ft_putnbr_unsigned(va_arg(*parameters, unsigned int)));
 	else if (format[i + 1] == 'X')
-		return (ft_putnbr_hexadecimal_fd(va_arg(*parameters, unsigned int), 1, "0123456789ABCDEF"));
+		return (ft_putnbr_hexa(va_arg(*parameters, unsigned int), baseM));
 	else if (format[i + 1] == 'x')
-		return (ft_putnbr_hexadecimal_fd(va_arg(*parameters, unsigned int), 1, "0123456789abcdef"));
+		return (ft_putnbr_hexa(va_arg(*parameters, unsigned int), baseMi));
 	else if (format[i + 1] == '%')
-		return(ft_putchar_fd('%', 1));
+		return(ft_putchar('%'));
 	return (0);
 }
 
@@ -49,7 +54,7 @@ int	ft_printf(const char *format, ...)
 			towrite++;
 		}
 		else
-			count += ft_putchar_fd(format[towrite], 1);
+			count += ft_putchar(format[towrite]);
 		towrite++;
 	}
 	va_end(parameters);
