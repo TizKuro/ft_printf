@@ -6,12 +6,11 @@
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 14:07:19 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/03 03:21:25 by trmorand         ###   ########.fr       */
+/*   Updated: 2026/11/03 04:58:25 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
+#include "ft_printf.h"
 int	ft_putstr_fd(char *s, int fd)
 {
 	int	i;

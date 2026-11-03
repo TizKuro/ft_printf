@@ -6,11 +6,11 @@
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 14:03:53 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/02 20:04:50 by trmorand         ###   ########.fr       */
+/*   Updated: 2026/11/03 04:57:58 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	ft_putchar_fd(char c, int fd)
 {

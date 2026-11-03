@@ -6,11 +6,11 @@
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 14:05:11 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/03 04:47:57 by trmorand         ###   ########.fr       */
+/*   Updated: 2026/11/03 04:58:03 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 int	ft_putnbr_fd(int n, int fd)
 {

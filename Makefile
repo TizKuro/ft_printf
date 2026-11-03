@@ -1,7 +1,7 @@
 NAME = libftprintf.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I. -I$(LIBFT_DIR)
+CFLAGS = -Wall -Wextra -Werror
 
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -19,11 +19,9 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(MAKE) -C $(LIBFT_DIR)
-	cp $(LIBFT) $(NAME)
 	ar rcs $(NAME) $(OBJS)
 
-%.o: %.c ft_printf.h $(LIBFT_DIR)/libft.h
+%.o: %.c ft_printf.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
