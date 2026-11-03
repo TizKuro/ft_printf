@@ -3,9 +3,6 @@ NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-LIBFT_DIR = libft
-LIBFT = $(LIBFT_DIR)/libft.a
-
 SRCS = ft_printf.c \
 	ft_pmemory.c \
 	ft_putnbr_hexadecimal_fd.c \
