@@ -6,7 +6,7 @@
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 04:48:55 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/03 23:58:45 by trmorand         ###   ########.fr       */
+/*   Updated: 2026/11/05 17:22:10 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_putnbr_unsigned(unsigned int n)
 	int	len;
 
 	len = 0;
-
 	if (n >= 0 && n <= 9)
 	{
 		ft_putchar(n + '0');

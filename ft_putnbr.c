@@ -6,7 +6,7 @@
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 14:05:11 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/03 23:58:53 by trmorand         ###   ########.fr       */
+/*   Updated: 2026/11/05 17:21:06 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 int	ft_putnbr(int n)
 {
 	long int	nb;
-	int	len;
+	int			len;
 
 	len = 0;
 	nb = n;
-
 	if (nb < 0)
 	{
 		ft_putchar('-');

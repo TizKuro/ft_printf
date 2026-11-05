@@ -6,47 +6,48 @@
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/01 02:01:42 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/03 23:57:40 by trmorand         ###   ########.fr       */
+/*   Updated: 2026/11/05 17:31:44 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 static	int	litters(const char *format, int i, va_list *parameters)
 {
-	char	*baseM;
-	char	*baseMi;
+	char	*bm;
+	char	*bmi;
 
-	baseM = "0123456789ABCDEF";
-	baseMi = "0123456789abcdef";
+	bm = "0123456789ABCDEF";
+	bmi = "0123456789abcdef";
 	if (format[i + 1] == 'c')
-		return(ft_putchar(va_arg(*parameters, int)));
+		return (ft_putchar(va_arg(*parameters, int)));
 	else if (format[i + 1] == 's')
-		return(ft_putstr(va_arg(*parameters, char *)));
+		return (ft_putstr(va_arg(*parameters, char *)));
 	else if (format[i + 1] == 'd' || format[i + 1] == 'i')
-		return(ft_putnbr(va_arg(*parameters, int)));
+		return (ft_putnbr(va_arg(*parameters, int)));
 	else if (format[i + 1] == 'p')
-		return(ft_pmemory(va_arg(*parameters, void *)));
+		return (ft_pmemory(va_arg(*parameters, void *)));
 	else if (format[i + 1] == 'u')
-		return(ft_putnbr_unsigned(va_arg(*parameters, unsigned int)));
+		return (ft_putnbr_unsigned(va_arg(*parameters, unsigned int)));
 	else if (format[i + 1] == 'X')
-		return (ft_putnbr_hexa(va_arg(*parameters, unsigned int), baseM));
+		return (ft_putnbr_hexa(va_arg(*parameters, unsigned int), bm));
 	else if (format[i + 1] == 'x')
-		return (ft_putnbr_hexa(va_arg(*parameters, unsigned int), baseMi));
+		return (ft_putnbr_hexa(va_arg(*parameters, unsigned int), bmi));
 	else if (format[i + 1] == '%')
-		return(ft_putchar('%'));
+		return (ft_putchar('%'));
 	return (0);
 }
 
 int	ft_printf(const char *format, ...)
 {
-	va_list parameters;
-	va_start (parameters, format);
-	size_t towrite;
-	int	count;
+	va_list	parameters;
+	size_t	towrite;
+	int		count;
 
+	va_start (parameters, format);
 	towrite = 0;
 	count = 0;
-	while(format[towrite])
+	while (format[towrite])
 	{
 		if (format[towrite] == '%')
 		{

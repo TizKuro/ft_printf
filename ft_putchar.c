@@ -6,7 +6,7 @@
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/22 14:03:53 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/04 00:01:00 by trmorand         ###   ########.fr       */
+/*   Updated: 2026/11/05 17:20:14 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int	ft_putchar(char c)
 {
-	int	i;
-	i = 1;
 	write(1, &c, 1);
-	return (i);
+	return (1);
 }
