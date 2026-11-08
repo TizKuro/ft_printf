@@ -6,7 +6,7 @@
 /*   By: trmorand <trmorand@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/01 02:01:42 by trmorand          #+#    #+#             */
-/*   Updated: 2026/11/05 17:31:44 by trmorand         ###   ########.fr       */
+/*   Updated: 2026/11/08 06:25:47 by trmorand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,17 @@ int	ft_printf(const char *format, ...)
 	va_start (parameters, format);
 	towrite = 0;
 	count = 0;
+	if (!format)
+		return (-1);
 	while (format[towrite])
 	{
 		if (format[towrite] == '%')
 		{
+			if (!format[towrite + 1])
+			{
+				va_end parameters;
+				return (-1);
+			}
 			count += litters(format, towrite, &parameters);
 			towrite++;
 		}
